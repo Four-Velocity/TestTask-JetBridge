@@ -79,6 +79,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTH_USER_MODEL = 'main.CustomUser'
+
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'Europe/Kiev'
