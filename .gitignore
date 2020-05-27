@@ -1,0 +1,12 @@
+#dev files
+dev_settings.py
+db.sqlite3
+ToDo
+*.bak
+jb_test/.env
+
+#python files
+__pycache__/
+*/__pycache__/
+*.py[cod]
+.pyc
