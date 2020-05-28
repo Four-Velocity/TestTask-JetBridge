@@ -1,0 +1,66 @@
+{% extends 'index.html' %}
+{% block title %}
+    | Profile
+{% endblock %}
+{% block content %}
+     <div id="header" class="row bg-dark align-items-center" style="margin: 0; margin-bottom: 5%">
+        <div class="col-1"></div>
+        <div class="col text-white"><a id="logo-main" class="btn btn-outline-primary" style="border: 0" href="/"><h1>Four Plates</h1></a></div>
+        <div class="col-1"></div>
+         <div class="col-3"><h2 class="text-uppercase text-white">{{ num_of_us }} users joined</h2></div>
+        <div class="col-1">
+            {% if is_owner %}
+                <a class="btn btn-success" href="/user_{{ pk }}/edit/">Edit Profile</a>
+            {% endif %}
+        </div>
+        <div class="col-1 text-white"><a class="btn btn-primary" href="/user_{{ pk }}/">My profile</a></div>
+        <div class="col-1 text-center">
+            <a class="btn btn-danger" href="/logout/">Log Out</a></div>
+        </div>
+        <div class="col-1"></div>
+    </div>
+    <div class="row">
+    <div class="col-3"></div>
+    <div class="col-6 justify-content-center">
+    <div class="row justify-content-center">
+        <div class="col justify-content-center">
+            <img class="img-thumbnail" src="{{ profile.avatar.url }}" alt="AVATAR" style="max-width: 512px">
+        </div>
+        <div class="col justify-content-center">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><h3 class="profile-header">FIRST NAME </h3><h4>{{ profile.first_name }}</h4></li>
+                <li class="list-group-item"><h3 class="profile-header">LAST NAME </h3><h4>{{ profile.last_name }}</h4></li>
+                <li class="list-group-item"><h3 class="profile-header">GENDER </h3><h4>{{ profile.get_gender_display }}</h4></li>
+                <li class="list-group-item"><h3 class="profile-header">INVITE </h3><h4>{{ profile.owner.invite_code.joined }}</h4></li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        {% block plates %}
+        {% endblock %}
+    </div>
+    <div class="row align-items-center">
+        <div class="col-5">
+            <img width="100%" class="img-thumbnail" src="{{ code.qr.url }}" alt="{{ code.code }}" style="padding: 0">
+
+        </div>
+    <div class="col-7">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><h3 class="profile-header">CODE </h3><h4>{{ code.code }}</h4></li>
+            <li class="list-group-item"><h3 class="profile-header">INVITATION LINK </h3><h4>{{ code.url }}</h4></li>
+        </ul>
+    </div>
+    </div>
+    <div class="col-3"></div>
+    </div>
+
+    <style>
+    .row: {
+        padding: 0;
+        margin: 0;
+    }
+    .profile-header{
+        color: #28a745;
+    }
+    </style>
+{% endblock %}

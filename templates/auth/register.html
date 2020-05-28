@@ -1,0 +1,24 @@
+{% extends 'index.html' %}
+{% block title %}
+    | Sign Up
+{% endblock %}
+{% block content %}
+    <script>
+        $(document).ready(function () {
+            $("#id_invitation_code").val("{{ code }}");
+        })
+    </script>
+    <div class="row align-items-center" style="height: 100vh">
+        <div class="col-md-1 col-l-2 col-xl-3"></div>
+        <div class="col-md-10 col-l-8 col-xl-6">
+        {% load crispy_forms_tags %}
+        <form method="post">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button type="submit" class="btn btn-success" style="width: 100%; margin-bottom: 2%">Register</button>
+        </form>
+            <div class="col text-center"><a class="btn btn-link" href="/login/">Already registered? Sign In</a></div>
+        </div>
+        <div class="col-md-1 col-l-2 col-xl-3"></div>
+    </div>
+{% endblock %}

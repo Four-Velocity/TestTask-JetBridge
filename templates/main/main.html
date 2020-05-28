@@ -1,0 +1,52 @@
+{% extends 'index.html' %}
+{% block title %}
+{% endblock %}
+{% block content %}
+     <div id="header" class="row bg-dark align-items-center" style="margin: 0; margin-bottom: 5%">
+        <div class="col-1"></div>
+        <div class="col text-white"><a id="logo-main" class="btn btn-link" style="border: 0" href="/"><h1>Four Plates</h1></a></div>
+        <div class="col3"></div>
+         <div class="col"><h2 class="text-uppercase text-white">{{ num_of_us }} users joined</h2></div>
+        <div class="col-3"></div>
+        <div class="col-1 text-white"><a class="btn btn-primary" href="/user_{{ pk }}/">My profile</a></div>
+        <div class="col-1 text-center">
+            <a class="btn btn-danger" href="/logout/">Log Out</a></div>
+        </div>
+        <div class="col-1"></div>
+    </div>
+    <div class="row align-items-center" style="margin: 0">
+        <div class="col-md-1 col-l-2"></div>
+        <div class="col-md-10 col-l-8">
+        <div class="row">
+            {% for profile in first %}
+                <div class="col">
+                    <div class="card-group" style="margin-bottom: 2%">
+                        <div class="card">
+                            <img class="card-img-top" src="{{ profile.avatar }}" alt="AVATAR">
+                            <div class="card_body">
+                                <h4 class="card-title text-center">{{ profile.name }}</h4>
+                                <a href="/user_{{ profile.pk }}/" class="btn btn-outline-dark btn-lg btn-block"> Visit </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        <div class="w-100"></div>
+            {% for profile in second %}
+                <div class="col">
+                <div class="card-group">
+                    <div class="card">
+                        <img class="card-img-top" src="{{ profile.avatar }}" alt="AVATAR">
+                        <div class="card_body">
+                            <h4 class="card-title text-center">{{ profile.name }}</h4>
+                            <a href="/user_{{ profile.pk }}/" class="btn btn-outline-dark btn-lg btn-block"> Visit </a>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            {% endfor %}
+        </div>
+        </div>
+        <div class="col-md-1 col-l-2 col-xl-3"></div>
+    </div>
+{% endblock %}

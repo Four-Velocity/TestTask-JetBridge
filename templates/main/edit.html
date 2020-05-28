@@ -1,0 +1,55 @@
+{% extends 'index.html' %}
+{% block title %}
+    | Edit
+{% endblock %}
+{% block content %}
+    <script>
+        $(document).ready(function () {
+            $("#id_first_name").val("{{ profile.first_name }}");
+            $("#id_last_name").val("{{ profile.last_name }}");
+            $("#id_gender").val("{{ profile.gender }}");
+            $("#id_bio").val("{{ profile.bio }}");
+            $("#id_skill_1").val("{{ profile.skill_1 }}");
+            $("#id_level_1").val("{{ profile.level_1 }}");
+            $("#id_skill_2").val("{{ profile.skill_2 }}");
+            $("#id_level_2").val("{{ profile.level_2 }}");
+            $("#id_skill_3").val("{{ profile.skill_3 }}");
+            $("#id_level_3").val("{{ profile.level_3 }}");
+            $("#id_skill_4").val("{{ profile.skill_4 }}");
+            $("#id_level_4").val("{{ profile.level_4 }}");
+            $("#id_plate_text_1").val("{{ profile.plate_text_1 }}");
+            $("#id_plate_text_2").val("{{ profile.plate_text_2 }}");
+            $("#id_plate_text_3").val("{{ profile.plate_text_3 }}");
+            $("#id_plate_text_4").val("{{ profile.plate_text_4 }}");
+            $("#id_template").val("{{ profile.template }}");
+        })
+    </script>
+    <div class="row align-items-center" style="height: 100vh">
+        <div class="col-md-1 col-l-2 col-xl-3"></div>
+        <div class="col-md-10 col-l-8 col-xl-6">
+        {% load crispy_forms_tags %}
+        <form  method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-3">{{ form.first_name|as_crispy_field }}</div>
+                <div class="col-md-3">{{ form.last_name|as_crispy_field }}</div>
+                <div class="col-md-3">{{ form.gender|as_crispy_field }}</div>
+                <div class="col-md-3">{{ form.avatar|as_crispy_field }}</div>
+
+
+                <div class="col-6">{{ form.template|as_crispy_field }}</div>
+                <div class="col-6"></div>
+
+                <div class="col-md-3 col-6">{{ form.plate_img_1|as_crispy_field }}</div>
+                <div class="col-md-3 col-6">{{ form.plate_img_2|as_crispy_field }}</div>
+                <div class="col-md-3 col-6">{{ form.plate_img_3|as_crispy_field }}</div>
+                <div class="col-md-3 col-6">{{ form.plate_img_4|as_crispy_field }}</div>
+
+
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%; margin-bottom: 2%">Save</button>
+        </form>
+        </div>
+        <div class="col-md-1 col-l-2 col-xl-3"></div>
+    </div>
+{% endblock %}

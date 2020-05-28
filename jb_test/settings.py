@@ -6,6 +6,7 @@ environ.Env.read_env()
 
 BASE_DIR = root()
 
+
 SECRET_KEY = env.str('SECRET_KEY')
 
 DEBUG = env.bool('DEBUG', default=False)
@@ -19,6 +20,12 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = root.path('media/')
 MEDIA_URL = '/media/'
+
+MAIN_URL = env.str('MAIN_URL')
+
+LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = 'login/'
+LOGOUT_URL = 'logout/'
 
 ALLOWED_HOSTS = []
 

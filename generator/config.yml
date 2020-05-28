@@ -1,0 +1,24 @@
+# Dummy data generator settings. Read README.md/Generator/Config for more information about each item
+
+Basic:
+  start_date: # DEFAULT: 2019-1-1 00:00:00
+  periods: 3 # DEFAULT: 15
+  first_period: # DEFAULT: 10
+  growth: # DEFAULT: 150
+  default_password: # DEFAULT: 'Sup@Strong'
+
+Chances:
+  invite: # DEFAULT: 70
+  non_personal_invite: # DEFAULT: 5
+  non_standart_avatar:  # DEFAULT: 70
+
+API:
+  sleep_time: 1.1 # DEFAULT: 0.7
+  image:  # DEFAULT: 'https://source.unsplash.com/random'
+  image_verify: # DEFAULT: True
+  image_type: # DEFAULT: 'content'
+  image_path_to_content: # DEFAULT: None
+  avatar: # DEFAULT: 'https://tinyfac.es/api/users'
+  avatar_verify: # DEFAULT: False
+  avatar_type: # DEFAULT: 'json'
+  avatar_path_to_content: # DEFAULT: ['avatars', 1, 'url']

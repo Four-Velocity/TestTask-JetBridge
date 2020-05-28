@@ -4,6 +4,8 @@ db.sqlite3
 ToDo
 *.bak
 jb_test/.env
+media/
+static/
 
 #python files
 __pycache__/

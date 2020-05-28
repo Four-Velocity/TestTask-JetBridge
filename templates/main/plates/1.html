@@ -1,0 +1,21 @@
+{% extends 'main/profile.html' %}
+
+{% block plates %}
+        <div class="col-12" id="plates">
+            <div class="row">
+                <div class="col-6 plate"><img src="{{ profile.plate_img_1.url }}" alt="Profile image 1"
+                                      class="img-fluid"></div>
+                <div class="col-6 plate"><img src="{{ profile.plate_img_2.url }}" alt="Profile image 2"
+                                      class="img-fluid"></div>
+                <div class="col-6 plate"><img src="{{ profile.plate_img_3.url }}" alt="Profile image 3"
+                                      class="img-fluid"></div>
+                <div class="col-6 plate"><img src="{{ profile.plate_img_4.url }}" alt="Profile image 4"
+                                      class="img-fluid"></div>
+            </div>
+        </div>
+    <style>
+    .plate{
+        padding: 0;
+    }
+    </style>
+{% endblock %}
