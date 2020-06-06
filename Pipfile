@@ -10,7 +10,7 @@ PyYAML = "==5.3.1"
 Django-Debug-Toolbar = "==2.2"
 
 [packages]
-Django = "==3.0.6"
+Django = "==3.0.7"
 Django-Crispy-Forms = "==1.9.1"
 Django-Environ = "==0.4.5"
 Psycopg2 = "==2.8.5"
