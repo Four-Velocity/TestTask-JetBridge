@@ -15,7 +15,7 @@ Django-Crispy-Forms = "==1.9.1"
 Django-Environ = "==0.4.5"
 Psycopg2 = "==2.8.5"
 Django-Redis = "==4.11.0"
-Pillow = "==7.1.2"
+Pillow = "==8.1.1"
 Qrcode = "==6.1"
 Requests = "==2.23.0"
 
